@@ -1,0 +1,74 @@
+/* product_list_styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* light gray */
+    color: #333; /* dark gray */
+}
+
+h1 {
+    color: black; /* black */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    color: black; /* black */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333; /* dark gray */
+}
+
+button {
+    padding: 8px 15px;
+    background-color: red; /* red */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+.product {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    width: 500px; /* Set a fixed width */
+    height: 500px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.product h2 {
+    color: black; /* black */
+    margin-bottom: 10px;
+}
+
+.product p {
+    color: black; /* black */
+    margin-bottom: 5px;
+}

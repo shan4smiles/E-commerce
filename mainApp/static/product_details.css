@@ -1,0 +1,54 @@
+/* product_details.css */
+
+/* Container for the entire product details */
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+/* Styling for the product image */
+.product-image {
+    width: 100%; /* Image takes up half of the container width */
+    margin-bottom: 20px; /* Spacing between image and details */
+}
+
+.product-image img {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Styling for the product details */
+.product-details {
+    width: 50%; /* Details take up half of the container width */
+}
+
+/* Styling for the table */
+.product-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-details table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Add border between table rows */
+}
+
+/* Styling for buttons */
+.add-to-wishlist,
+.add-to-cart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-to-wishlist:hover,
+.add-to-cart:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
