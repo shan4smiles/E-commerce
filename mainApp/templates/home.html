@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon-like Website</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<style>
+
+/* styles.css */
+
+img {
+    width: 200px; /* Set a fixed width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+
+</style>
+<body>
+    <header>
+        <center><h1>Start with our Amazon-alike Website</h1></center>
+        <nav>
+            <ul>
+                <li><a href="{% url 'main:register_user' %}">Sign Up</a></li>
+                <li><a href="{% url 'main:authenticate_user' %}">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content">
+        <h2>Have a peek into our featured products</h2>
+        {% for product in data %}
+        <div class="product">
+            <img src="{{product.image.url}}" alt="{{product.name}}">
+            <h3>{{product.name}}</h3>
+            <p>{{product.description}}</p>
+        </div>
+        {% endfor %}
+        <!-- More products here -->
+    </section>
+    <footer>
+        <p>&copy; 2024 Amazon-like Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

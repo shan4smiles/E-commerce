@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="{% static 'product_list_styles.css' %}">
+</head>
+<body>
+    <!-- The Title -->
+    <h1>Product List</h1>
+
+    <!-- The Search form -->
+    <form method="GET" action="{% url 'main:product_list' %}">
+        <label for="name">Search : </label>
+        <input id="name" type="text" name="name">
+
+        <button value="submit">Search</button>
+    </form>
+
+    <!-- The filter form -->
+    <form method="GET" action="{% url 'main:product_list' %}">
+        <label for="min_price">Min Price : </label>
+        <input id="min_price" type="number" name="price_min">
+
+        <label for="max_price">Max Price : </label>
+        <input id="max_price" type="number" name="price_max">
+
+        <label for="category">Category : </label>
+        <select id="category" name="category">
+            <option value="">--</option>
+            {% for category in categories %}
+                <option value="{{category.name}}">{{category.name}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="featured">Featured : </label>
+        <select id="featured" name="is_featured">
+            <option value="">--</option>
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select>
+
+        <button value="submit">Go</button>
+    </form>
+
+    <!-- Product list -->
+    <div class="product-list">
+        {% for product in data %}
+            <div class="product">
+                <a href="{% url 'main:product_detail' product.pk %}"> <!--to navigate to a specific product -->
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <h2>{{ product.name }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}

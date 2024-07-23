@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon-like Website</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <center><h1>Welcome to our Amazon-alike Website</h1></center>
+        <nav>
+            <ul>
+                <li><a href="{% url 'main:register_user' %}">Sign Up</a></li>
+                <li><a href="{% url 'main:add_product' %}">Product Up</a></li>
+                <li><a href="{% url 'main:product_list' %}">Product List</a></li>
+                <li><a href="{% url 'main:logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <p>&copy; 2024 Amazon-like Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
